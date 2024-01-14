@@ -6,6 +6,7 @@ import Slider1 from '@/components/slider-crypto';
 import Slider2 from '@/components/slider-pay';
 import { useEffect, useState } from 'react';
 import { Passion_One } from 'next/font/google'
+import Link from 'next/link';
 
 const passion = Passion_One({ subsets: ['latin'], weight: '400', })
 
@@ -48,9 +49,18 @@ function Home() {
     <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
       {/* Landing Page */}
       <div className='md:h-screen h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
-        <div className="flex h-[70px] px-[15px] mt-[15px] w-screen">
+        <div className="flex h-[70px] items-center px-[15px] w-screen">
           <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
             <img src="./logo.png" alt="logo" className='h-[40px]' />
+          </a>
+          <Link href="/about">
+            <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
+          </Link>
+          <Link href="/privacy">
+            <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >PRIVACY POLICY</p>
+          </Link>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=appmoneydev@gmail.com&su=I want to build a App/Software&body=Tell us more about what you want...">
+            <p className='text-md font-bold text-white-600 hover:bg-purple-700 bg-purple-600 rounded-md p-2 px-4 ml-4' >BUILD YOUR APP</p>
           </a>
         </div>
         <div className="flex absolute w-screen">
