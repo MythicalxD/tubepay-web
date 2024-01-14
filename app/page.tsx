@@ -1,11 +1,14 @@
 "use client";
-import { passion } from './layout'
 import styles from './imageAnimation.module.css';
 import Slider from '@/components/slider';
 import YouTubePlayer from '@/components/player';
 import Slider1 from '@/components/slider-crypto';
 import Slider2 from '@/components/slider-pay';
 import { useEffect, useState } from 'react';
+import { Passion_One } from 'next/font/google'
+
+const passion = Passion_One({ subsets: ['latin'], weight: '400', })
+
 
 function Home() {
 
