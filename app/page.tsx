@@ -7,6 +7,7 @@ import Slider2 from '@/components/slider-pay';
 import { useEffect, useState } from 'react';
 import { Passion_One } from 'next/font/google'
 import Link from 'next/link';
+import SEO from '@/components/SEO';
 
 const passion = Passion_One({ subsets: ['latin'], weight: '400', })
 
@@ -48,31 +49,36 @@ function Home() {
   return (
     <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
       {/* Landing Page */}
+      <SEO
+        title="Tubepay"
+        description="Earn free rewards by watching videos on Tubepay. Your go-to app for making money in your free time!"
+        canonical="https://tubepay.live"
+      />
       <div className='md:h-screen h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
         <div className="flex h-[70px] items-center px-[15px] w-screen">
           <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
-            <img src="./logo.png" alt="logo" className='h-[40px]' />
+            <img src="./logo.png" alt="logo" className='md:h-[40px] h-[20px]' />
           </a>
           <Link href="/about">
-            <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
           </Link>
           <Link href="/privacy">
-            <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >PRIVACY POLICY</p>
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >PRIVACY POLICY</p>
           </Link>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=appmoneydev@gmail.com&su=I want to build a App/Software&body=Tell us more about what you want...">
-            <p className='text-md font-bold text-white-600 hover:bg-purple-700 bg-purple-600 rounded-md p-2 px-4 ml-4' >BUILD YOUR APP</p>
+            <p className='md:text-md text-sm font-bold text-white-600 hover:bg-purple-700 bg-purple-600 rounded-md p-2 px-4 ml-4' >BUILD YOUR APP</p>
           </a>
         </div>
-        <div className="flex absolute w-screen">
+        <div className="md:flex hidden absolute w-screen">
           <img src="./art1.png" alt="art1" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex absolute right-10 top-[150px]">
           <img src="./art2.png" alt="art2" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
-        <div className="flex absolute right-10 top-[60px]">
+        <div className="md:flex hidden absolute right-10 top-[60px]">
           <img src="./v2.png" alt="art2" className='md:w-[47px] md:h-[66px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
-        <div className="flex absolute md:right-[-150px] right-0 top-[400px] bottom-[60px]">
+        <div className="md:flex hidden absolute md:right-[-150px] right-0 top-[400px] bottom-[60px]">
           <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex absolute md:left-[-150px] left-0 bottom-[60px]">
@@ -82,8 +88,8 @@ function Home() {
           <img src="./art3.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex flex-col md:mx-[250px] md:mt-[60px] md:w-[500px]">
-          <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal tracking-[3.50px] ${passion.className}`}>WATCH AND EARN, FREE REWARDS AND PAYPAL CASH</div>
-          <div className="text-white text-xl mx-8 font-semibold tracking-wider mt-[20px]">Download now and Enter Referral code<br />TUBEPAY100 to get free 1$ as signup bonus.<br /></div>
+          <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal tracking-[3.50px] ${passion.className}`}>WATCH AND EARN FREE REWARDS AND PAYPAL CASH</div>
+          <div className="text-white text-xl mx-8 font-semibold tracking-wider mt-[20px]">Download now and Enter Referral code<br />TUBEPAY to get free 1$ as signup bonus.<br /></div>
           <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
             <img src="./play.png" alt="download" className='z-10 w-[200px] h-[60px] mt-[20px] mx-8' />
           </a>
@@ -100,15 +106,15 @@ function Home() {
       </div>
 
       {/* Divider */}
-      <div className="flex absolute md:top-[800px] top-[1000px] object-cover">
+      <div className="md:flex hidden absolute md:top-[800px] top-[1000px] object-cover">
         <img src="./wave.png" alt="art2" className='w-screen' />
       </div>
-      <div className="flex absolute md:top-[900px] top-[1500px] transform rotate-180 object-cover">
+      <div className="md:flex hidden absolute md:top-[900px] top-[1500px] transform rotate-180 object-cover">
         <img src="./wave.png" alt="art2" className='w-screen' />
       </div>
 
       {/* Stats */}
-      <div className="z-10 flex md:flex-row flex-col w-screen gap-y-[80px] justify-between md:px-[200px] items-center absolute md:top-[1000px] top-[1140px]">
+      <div className="z-10 flex md:flex-row flex-col w-screen gap-y-[80px] justify-between md:px-[200px] items-center absolute md:top-[1000px] top-[1000px]">
         <img src="./stat3.png" alt="stat1" className='w-[220px] h-[56px]' />
         <img src="./stat2.png" alt="stat1" className='w-[255px] h-[56px]' />
         <img src="./stat1.png" alt="stat1" className='w-[255px] h-[56px]' />
@@ -150,7 +156,7 @@ function Home() {
       </div>
 
       {/* Divider */}
-      <div className="flex absolute md:top-[900px] top-[2500px] transform rotate-180 object-cover">
+      <div className="md:flex hidden absolute md:top-[900px] top-[2500px] transform rotate-180 object-cover">
         <img src="./wave.png" alt="art2" className='w-screen' />
       </div>
 

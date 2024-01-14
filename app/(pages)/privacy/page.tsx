@@ -1,4 +1,5 @@
 "use client";
+import SEO from '@/components/SEO';
 import { Passion_One } from 'next/font/google'
 import Link from 'next/link';
 
@@ -9,6 +10,12 @@ function Privacy() {
 
     return (
         <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
+            <SEO
+                title="Privacy Policy - Tubepay"
+                description="Your privacy matters to us at Tubepay. Understand how we handle your data with transparency and security. We collect minimal information to enhance your experience, and you have the control to manage your data at your convenience."
+                canonical="https://tubepay.live/privacy"
+            />
+
             <div className="flex h-[70px] items-center px-[15px] w-screen bg-gradient-to-r from-orange-400 to-pink-500">
                 <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
                     <img src="./logo.png" alt="logo" className='h-[40px]' />
