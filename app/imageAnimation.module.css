@@ -1,0 +1,34 @@
+/* ImageAnimation.module.css */
+.imageContainer {
+  @apply h-[400px]; /* Adjust the height as needed */
+}
+
+.animatedImage {
+  @apply absolute left-1/2 transform -translate-x-1/2;
+
+  @screen md {
+    animation: moveUpDown-md 1s infinite alternate; /* Animation for medium screens */
+  }
+
+  animation: moveUpDown-sm 1s infinite alternate; /* Default animation for small screens */
+}
+
+@keyframes moveUpDown-sm {
+  0% {
+    top: 50%; /* Initial position for small screens */
+  }
+
+  100% {
+    top: 60%; /* Final position for small screens */
+  }
+}
+
+@keyframes moveUpDown-md {
+  0% {
+    top: 8cm; /* Initial position for medium screens */
+  }
+
+  100% {
+    top: 90%; /* Final position for medium screens */
+  }
+}

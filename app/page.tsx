@@ -1,113 +1,161 @@
-import Image from 'next/image'
+"use client";
+import { passion } from './layout'
+import styles from './imageAnimation.module.css';
+import Slider from '@/components/slider';
+import YouTubePlayer from '@/components/player';
+import Slider1 from '@/components/slider-crypto';
+import Slider2 from '@/components/slider-pay';
+import { useEffect, useState } from 'react';
 
-export default function Home() {
+function Home() {
+
+  const [count, setCount] = useState(0);
+  const [time, setTime] = useState(150);
+  const totalTime = 150;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (time > 0) {
+        setTime(prevTime => prevTime - 1);
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 1000);
+
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [time]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (count < totalTime) {
+        setCount(prevCount => prevCount + 0.02);
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 300);
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, [count]); // Empty dependency array ensures the effect runs only once on component mount
+
+  const remainingTime = totalTime - count;
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
+      {/* Landing Page */}
+      <div className='md:h-screen h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
+        <div className="flex h-[70px] px-[15px] mt-[15px] w-screen">
+          <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
+            <img src="./logo.png" alt="logo" className='h-[40px]' />
           </a>
+        </div>
+        <div className="flex absolute w-screen">
+          <img src="./art1.png" alt="art1" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex absolute right-10 top-[150px]">
+          <img src="./art2.png" alt="art2" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex absolute right-10 top-[60px]">
+          <img src="./v2.png" alt="art2" className='md:w-[47px] md:h-[66px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex absolute md:right-[-150px] right-0 top-[400px] bottom-[60px]">
+          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex absolute md:left-[-150px] left-0 bottom-[60px]">
+          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex absolute md:left-[500px] left-[30px] bottom-[10px]">
+          <img src="./art3.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className="flex flex-col md:mx-[250px] md:mt-[60px] md:w-[500px]">
+          <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal tracking-[3.50px] ${passion.className}`}>WATCH AND EARN, FREE REWARDS AND PAYPAL CASH</div>
+          <div className="text-white text-xl mx-8 font-semibold tracking-wider mt-[20px]">Download now and Enter Referral code<br />TUBEPAY100 to get free 1$ as signup bonus.<br /></div>
+          <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
+            <img src="./play.png" alt="download" className='z-10 w-[200px] h-[60px] mt-[20px] mx-8' />
+          </a>
+          <div className="flex w-screen justify-center items-center">
+            <div className={`z-10 md:absolute relative md:right-10 top-0 md:block md:w-[600px] md:h-[500px] w-[300px] h-[360px] mt-[20px] mx-8 ${styles.imageContainer}`}>
+              <img
+                src="./img1.png"
+                alt="download"
+                className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${styles.animatedImage}`}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* Divider */}
+      <div className="flex absolute md:top-[800px] top-[1000px] object-cover">
+        <img src="./wave.png" alt="art2" className='w-screen' />
+      </div>
+      <div className="flex absolute md:top-[900px] top-[1500px] transform rotate-180 object-cover">
+        <img src="./wave.png" alt="art2" className='w-screen' />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* Stats */}
+      <div className="z-10 flex md:flex-row flex-col w-screen gap-y-[80px] justify-between md:px-[200px] items-center absolute md:top-[1000px] top-[1140px]">
+        <img src="./stat3.png" alt="stat1" className='w-[220px] h-[56px]' />
+        <img src="./stat2.png" alt="stat1" className='w-[255px] h-[56px]' />
+        <img src="./stat1.png" alt="stat1" className='w-[255px] h-[56px]' />
+      </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* Second Banner */}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <div className='flex flex-col items-center md:mt-0 mt-[500px] md:h-[160vh] h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
+        <div className="flex absolute md:right-[100px] right-[-50px] top-[1300px]">
+          <img src="./art3.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className={`text-white md:text-[50px] text-[35px] mx-8 md:mt-[600px] mt-[80px] font-normal tracking-[3.50px] ${passion.className}`}>EARN TP IN SECONDS</div>
+        <div className="flex md:flex-row flex-col w-screen justify-center items-center md:px-[100px] h-[600px] mt-[30px]">
+          <YouTubePlayer videoId='89blpMzo0BU' />
+          <div className="flex flex-col p-8 m-4">
+            <p className='text-bold text-3xl text-white mb-8' >CLick to watch</p>
+            <div className={`animate-bounce`}>
+              <h1 className='text-4xl text-white font-bold' >Balance: $ {count.toFixed(2)}</h1>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
+              <div className="flex justify-center items-center w-[150px] h-[50px] mt-[30px] border-2 border-purple-700 rounded-md bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 from-purple-400 to-pink-700 text-white font-extrabold text-xl">
+                CLAIM NOW
+              </div>
+            </a>
+            <div className={`animate-pulse`}>
+              <h1 className='text-2xl text-white font-semibold mt-[20px]' >Time Remaining: {time} sec</h1>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      </div>
+
+      <div className='flex flex-col items-center md:h-[110vh] h-[100vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
+        <div className="flex absolute md:right-[-100px] right-[-20px] top-[1850px]">
+          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] md:mt-[30px]' />
+        </div>
+        <div className={`text-white md:text-[50px] text-[35px] mx-8 mt-[70px] font-normal tracking-[3.50px] ${passion.className}`}>EASY USER INTERFACE</div>
+        <Slider />
+      </div>
+
+      {/* Divider */}
+      <div className="flex absolute md:top-[900px] top-[2500px] transform rotate-180 object-cover">
+        <img src="./wave.png" alt="art2" className='w-screen' />
+      </div>
+
+      <div className='flex flex-col items-center mt-0 md:mt-[0px] md:h-[60vh] h-[60vh] w-screen bg-white'>
+        <div className="flex absolute md:right-[100px] right-[20px] top-[2300px]">
+          <img src="./art2.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+        </div>
+        <div className={`text-black md:text-[50px] text-[35px] mx-8 mt-[30px] font-normal tracking-[3.50px] ${passion.className}`}>ALL CRYPTO AVAILABLE</div>
+        <Slider1 />
+        <Slider2 />
+      </div>
+
+      {/* Copyright */}
+      <div className='flex flex-col justify-center items-center md:h-[60px] h-[60px] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
+        <div className='text-md text-white px-3 text-center' >©2022 Copyright ASL Software. ALL RIGHTS RESERVED</div>
       </div>
     </main>
   )
 }
+
+export default Home;
