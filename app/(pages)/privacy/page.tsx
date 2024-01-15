@@ -31,7 +31,7 @@ function Privacy() {
                 </Link>
             </div>
             <div className="text-black p-8">
-                <p className='text-3xl' ><strong>TubePay Privacy Policy</strong></p><br></br>
+                <h1 className='text-3xl' ><strong>TubePay Privacy Policy</strong></h1><br></br>
                 <p><strong>Data Collection:</strong></p>
                 <p>To provide you with the best experience and personalized services, TubePay requires users to provide their email address during the app registration process. This information is crucial for linking in-app progress and ensuring secure authentication.</p><br></br>
                 <p><strong>Data Use:</strong></p>

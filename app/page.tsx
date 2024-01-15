@@ -43,17 +43,10 @@ function Home() {
     return () => clearInterval(intervalId);
   }, [count]); // Empty dependency array ensures the effect runs only once on component mount
 
-  const remainingTime = totalTime - count;
-
 
   return (
     <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
       {/* Landing Page */}
-      <SEO
-        title="Tubepay"
-        description="Earn free rewards by watching videos on Tubepay. Your go-to app for making money in your free time!"
-        canonical="https://tubepay.live"
-      />
       <div className='md:h-screen h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
         <div className="flex h-[70px] items-center px-[15px] w-screen">
           <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
@@ -70,22 +63,22 @@ function Home() {
           </a>
         </div>
         <div className="md:flex hidden absolute w-screen">
-          <img src="./art1.png" alt="art1" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./art1.png" alt="tubepay" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex absolute right-10 top-[150px]">
-          <img src="./art2.png" alt="art2" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./art2.png" alt="tubepay" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="md:flex hidden absolute right-10 top-[60px]">
-          <img src="./v2.png" alt="art2" className='md:w-[47px] md:h-[66px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./v2.png" alt="tubepay" className='md:w-[47px] md:h-[66px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="md:flex hidden absolute md:right-[-150px] right-0 top-[400px] bottom-[60px]">
-          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./v1.png" alt="tubepay" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex absolute md:left-[-150px] left-0 bottom-[60px]">
-          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./v1.png" alt="tubepay" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex absolute md:left-[500px] left-[30px] bottom-[10px]">
-          <img src="./art3.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./art3.png" alt="tubepay" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex flex-col md:mx-[250px] md:mt-[60px] md:w-[500px]">
           <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal tracking-[3.50px] ${passion.className}`}>WATCH AND EARN FREE REWARDS AND PAYPAL CASH</div>
@@ -107,10 +100,10 @@ function Home() {
 
       {/* Divider */}
       <div className="md:flex hidden absolute md:top-[800px] top-[1000px] object-cover">
-        <img src="./wave.png" alt="art2" className='w-screen' />
+        <img src="./wave.png" alt="tubepay" className='w-screen' />
       </div>
       <div className="md:flex hidden absolute md:top-[900px] top-[1500px] transform rotate-180 object-cover">
-        <img src="./wave.png" alt="art2" className='w-screen' />
+        <img src="./wave.png" alt="tubepay" className='w-screen' />
       </div>
 
       {/* Stats */}
@@ -124,7 +117,7 @@ function Home() {
 
       <div className='flex flex-col items-center md:mt-0 mt-[500px] md:h-[160vh] h-[125vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
         <div className="flex absolute md:right-[100px] right-[-50px] top-[1300px]">
-          <img src="./art3.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./art3.png" alt="tubepay" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className={`text-white md:text-[50px] text-[35px] mx-8 md:mt-[600px] mt-[80px] font-normal tracking-[3.50px] ${passion.className}`}>EARN TP IN SECONDS</div>
         <div className="flex md:flex-row flex-col w-screen justify-center items-center md:px-[100px] h-[600px] mt-[30px]">
@@ -149,7 +142,7 @@ function Home() {
 
       <div className='flex flex-col items-center md:h-[110vh] h-[100vh] w-screen bg-gradient-to-r from-orange-400 to-pink-500'>
         <div className="flex absolute md:right-[-100px] right-[-20px] top-[1850px]">
-          <img src="./v1.png" alt="art2" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] md:mt-[30px]' />
+          <img src="./v1.png" alt="tubepay" className='md:w-[267px] md:h-[257px] w-[47px] h-[66px] md:ml-[50px] md:mt-[30px]' />
         </div>
         <div className={`text-white md:text-[50px] text-[35px] mx-8 mt-[70px] font-normal tracking-[3.50px] ${passion.className}`}>EASY USER INTERFACE</div>
         <Slider />
@@ -157,12 +150,12 @@ function Home() {
 
       {/* Divider */}
       <div className="md:flex hidden absolute md:top-[900px] top-[2500px] transform rotate-180 object-cover">
-        <img src="./wave.png" alt="art2" className='w-screen' />
+        <img src="./wave.png" alt="tubepay" className='w-screen' />
       </div>
 
       <div className='flex flex-col items-center mt-0 md:mt-[0px] md:h-[60vh] h-[60vh] w-screen bg-white'>
         <div className="flex absolute md:right-[100px] right-[20px] top-[2300px]">
-          <img src="./art2.png" alt="art2" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
+          <img src="./art2.png" alt="tubepay" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className={`text-black md:text-[50px] text-[35px] mx-8 mt-[30px] font-normal tracking-[3.50px] ${passion.className}`}>ALL CRYPTO AVAILABLE</div>
         <Slider1 />

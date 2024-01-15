@@ -31,7 +31,7 @@ function About() {
                 </Link>
             </div>
             <div className="text-black p-8">
-                <p className='text-3xl' ><strong>About Our Team and Our App</strong></p><br></br>
+                <h1 className='text-3xl' ><strong>About Our Team and Our App</strong></h1><br></br>
                 <p>At the crossroads of innovation, passion, and knowledge, our team of college students united with a shared vision of crafting high-quality mobile applications that add tangible value to users&#39; lives. Leveraging our diverse skills in SQL database management, NodeJS backend development, and Flutter frontend design, we embarked on an exhilarating journey to develop cutting-edge apps that harness the power of AI to elevate user experiences and broaden their horizons.</p><br></br>
                 <p><strong>Our Journey Begins</strong></p>
                 <p>Our journey commenced as a collective of like-minded students driven by a shared ambition to leave a mark on the landscape of technology. Acknowledging the potential of AI and mobile applications to revolutionize industries and reshape user interactions, we set out to channel this potential into an app that not only prioritizes user-friendliness but also stimulates intellectual growth.</p><br></br>
