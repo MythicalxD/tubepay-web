@@ -19,6 +19,34 @@ function Home() {
   const totalTime = 150;
 
   useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.charset = 'utf-8';
+    script.src = 'https://www.smartsuppchat.com/loader.js?';
+
+    const smartsupp = document.createElement('script');
+    smartsupp.innerHTML = `
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = '325031abf2b01b44e1fcbad7f72dec9d5f02e55f';
+      window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+      })(document);
+    `;
+
+    document.body.appendChild(smartsupp);
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+      document.body.removeChild(smartsupp);
+    };
+  }, []);
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
       if (time > 0) {
         setTime(prevTime => prevTime - 1);
