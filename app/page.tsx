@@ -86,12 +86,19 @@ function Home() {
           <Link href="/privacy">
             <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >PRIVACY POLICY</p>
           </Link>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=appmoneydev@gmail.com&su=I want to build a App/Software&body=Tell us more about what you want...">
-            <p className='md:text-md text-sm font-bold text-white-600 hover:bg-purple-700 bg-purple-600 rounded-md p-2 px-4 ml-4' >BUILD YOUR APP</p>
-          </a>
-          <a href="/offerwall">
-            <p className='md:text-md text-sm font-bold text-white-600 hover:bg-purple-700 bg-purple-600 rounded-md p-2 px-4 ml-4' >OFFERWALL</p>
-          </a>
+          <Link href="/tnc">
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >TERMS AND CONDITIONS</p>
+          </Link>
+          <Link href="/tou">
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >TERMS OF USE</p>
+          </Link>
+          <Link href="/contact">
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
+          </Link>
+          <Link href="/refund">
+            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >REFUND</p>
+          </Link>
+
         </div>
         <div className="md:flex hidden absolute w-screen">
           <img src="./art1.png" alt="tubepay" className='md:w-[106px] md:h-[236px] w-[50px] h-[111px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
