@@ -13,7 +13,7 @@ function Privacy() {
             <SEO
                 title="Terms and Conditions - Tubepay"
                 description="tubepay tnc"
-                canonical="https://tubepay.live/privacy"
+                canonical="https://tubepay.live/tnc"
             />
 
             <div className="flex h-[70px] items-center px-[15px] w-screen bg-gradient-to-r from-orange-400 to-pink-500">
@@ -25,7 +25,7 @@ function Privacy() {
                 </Link>
             </div>
             <div className="text-black p-8">
-                <h1 className='text-3xl' ><strong>TubePay Privacy Policy</strong></h1><br></br>
+                <h1 className='text-3xl' ><strong>TubePay Terms and Conditions</strong></h1><br></br>
                 <p>
                     TERMS OF SERVICE
 

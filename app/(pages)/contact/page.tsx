@@ -26,7 +26,7 @@ function Privacy() {
             </div>
             <div className="text-black p-8">
                 <h1 className='text-3xl' ><strong>TubePay Contact Us</strong></h1><br></br>
-                <p><strong> You can contact us via email address. ubepay.team@gmail.com</strong></p>
+                <p><strong> You can contact us via email address tubepay.team@gmail.com</strong></p>
             </div>
         </main>
     )

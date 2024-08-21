@@ -89,9 +89,6 @@ function Home() {
           <Link href="/tnc">
             <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >TERMS AND CONDITIONS</p>
           </Link>
-          <Link href="/tou">
-            <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >TERMS OF USE</p>
-          </Link>
           <Link href="/contact">
             <p className='md:text-md md:block hidden text-sm font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
           </Link>
