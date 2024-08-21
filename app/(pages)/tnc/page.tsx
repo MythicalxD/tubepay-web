@@ -93,7 +93,7 @@ function Privacy() {
 
 
 
-                    The app is provided by TubePay on an "as is" and on an "as available" basis. All content and features of the app and Service are subject to change or termination without notice in the sole discretion of TubePay
+                    The app is provided by TubePay on an as is and on an as available basis. All content and features of the app and Service are subject to change or termination without notice in the sole discretion of TubePay
 
 
 
