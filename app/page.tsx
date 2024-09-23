@@ -116,10 +116,16 @@ function Home() {
           <img src="./art3.png" alt="tubepay" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
         <div className="flex flex-col md:mx-[250px] md:mt-[60px] md:w-[500px]">
-          <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal tracking-[3.50px] ${passion.className}`}>WATCH AND EARN FREE REWARDS AND PAYPAL CASH</div>
+          <div className={`text-white md:text-[50px] text-[35px] mx-8 font-normal ${passion.className}`}>WATCH AND EARN FREE REWARDS AND PAYPAL CASH</div>
           <div className="text-white text-xl mx-8 font-semibold tracking-wider mt-[20px]">Download now and Enter Referral code<br />TUBEPAY to get free 1$ as signup bonus.<br /></div>
           <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
             <img src="./play.png" alt="download" className='z-10 w-[200px] h-[60px] mt-[20px] mx-8' />
+          </a>
+          <p className='text-bold text-3xl text-white mb-2 mt-4 ms-6' >NEWSPAY FREE NEWS AND EARNING</p>
+          <a href="https://play.google.com/store/apps/details?id=com.ateam.newspay.newspay">
+            <div className="flex justify-center items-center w-[250px] h-[50px] mt-[10px] ml-[20px] border-2 border-purple-700 rounded-md bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 from-purple-400 to-pink-700 text-white font-extrabold text-xl">
+              DOWNLOAD NEWSPAY
+            </div>
           </a>
           <div className="flex w-screen justify-center items-center">
             <div className={`z-10 md:absolute relative md:right-10 top-0 md:block md:w-[600px] md:h-[500px] w-[300px] h-[360px] mt-[20px] mx-8 ${styles.imageContainer}`}>
@@ -154,21 +160,18 @@ function Home() {
         <div className="flex absolute md:right-[100px] right-[-50px] top-[1300px]">
           <img src="./art3.png" alt="tubepay" className='md:w-[270px] md:h-[136px] w-[100px] h-[50px] md:ml-[50px] ml-[20px] md:mt-[30px]' />
         </div>
-        <div className={`text-white md:text-[50px] text-[35px] mx-8 md:mt-[600px] mt-[80px] font-normal tracking-[3.50px] ${passion.className}`}>EARN TP IN SECONDS</div>
+        <div className={`text-white md:text-[50px] text-[35px] mx-8 md:mt-[600px] mt-[80px] font-normal tracking-[3.50px] ${passion.className}`}>EARN BY READING FREE NEWS</div>
         <div className="flex md:flex-row flex-col w-screen justify-center items-center md:px-[100px] h-[600px] mt-[30px]">
-          <YouTubePlayer videoId='89blpMzo0BU' />
+          <img src="./banner1.png" alt="tubepay" className='w-[60vw]' />
           <div className="flex flex-col p-8 m-4">
-            <p className='text-bold text-3xl text-white mb-8' >CLick to watch</p>
-            <div className={`animate-bounce`}>
-              <h1 className='text-4xl text-white font-bold' >Balance: $ {count.toFixed(2)}</h1>
-            </div>
-            <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
-              <div className="flex justify-center items-center w-[150px] h-[50px] mt-[30px] border-2 border-purple-700 rounded-md bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 from-purple-400 to-pink-700 text-white font-extrabold text-xl">
-                CLAIM NOW
+            <p className='text-bold text-3xl text-white mb-2' >Click to earn</p>
+            <a href="https://play.google.com/store/apps/details?id=com.ateam.newspay.newspay">
+              <div className="flex justify-center items-center w-[230px] h-[50px] mt-[0px] border-2 border-purple-700 rounded-md bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 from-purple-400 to-pink-700 text-white font-extrabold text-xl">
+                DOWNLOAD NOW
               </div>
             </a>
             <div className={`animate-pulse`}>
-              <h1 className='text-2xl text-white font-semibold mt-[20px]' >Time Remaining: {time} sec</h1>
+              <h1 className='text-2xl text-white font-semibold mt-[20px]' >USE CODE NEWSPAY AND GET 0.5$</h1>
             </div>
           </div>
         </div>
