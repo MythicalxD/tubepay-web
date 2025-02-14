@@ -61,7 +61,7 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="flex md:flex-row flex-col items-center justify-between w-full max-w-6xl">
+      <div className="flex md:flex-row flex-col items-center justify-between w-full max-w-6xl mt-8">
         <section className="flex flex-col items-start text-center">
           <h1 className="md:text-center text-start text-5xl font-extrabold">Download TubePay!</h1>
           <p className="mt-4 text-lg max-w-2xl text-start">
@@ -122,7 +122,7 @@ export default function Home() {
       </div>
 
       {/* Rating Breakdown Section */}
-      <section className="mt-12 w-full">
+      <section className="mt-12 w-full pb-8">
         <RatingBreakdown ratings={ratingData} averageRating={4.5} />
       </section>
 
