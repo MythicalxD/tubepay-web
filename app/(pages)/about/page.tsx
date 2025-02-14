@@ -1,61 +1,77 @@
 "use client";
 import SEO from '@/components/SEO';
-import { Passion_One } from 'next/font/google'
+import { Passion_One } from 'next/font/google';
 import Link from 'next/link';
 
-const passion = Passion_One({ subsets: ['latin'], weight: '400', })
-
+const passion = Passion_One({ subsets: ['latin'], weight: '400' });
 
 function About() {
-
     return (
-        <main className="flex flex-col min-h-screen w-screen bg-[#F3F4F5] overflow-x-hidden">
+        <main className="flex flex-col min-h-screen w-screen bg-[#1E1E2F] text-white overflow-x-hidden items-center">
             <SEO
-                title="Privacy Policy - Tubepay"
-                description="Your privacy matters to us at Tubepay. Understand how we handle your data with transparency and security. We collect minimal information to enhance your experience, and you have the control to manage your data at your convenience."
-                canonical="https://tubepay.live/privacy"
+                title="About Us - TubePay"
+                description="Learn about TubePay, our vision, and the technology behind it. Discover how we ensure secure transactions and user privacy while delivering top-quality mobile experiences."
+                canonical="https://tubepay.live/about"
             />
 
-            <div className="flex h-[70px] items-center px-[15px] w-screen bg-gradient-to-r from-orange-400 to-pink-500">
-                <a href="https://play.google.com/store/apps/details?id=com.earn.tubepay.tubepay">
-                    <img src="./logo.png" alt="logo" className='h-[40px]' />
-                </a>
-                <Link href="/">
-                    <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >HOME</p>
-                </Link>
-                <Link href="/about">
-                    <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >ABOUT US</p>
-                </Link>
-                <Link href="/privacy">
-                    <p className='text-md font-bold text-gray-700 hover:text-black ml-4' >PRIVACY POLICY</p>
-                </Link>
-            </div>
-            <div className="text-black p-8">
-                <h1 className='text-3xl' ><strong>About Our Team and Our App</strong></h1><br></br>
-                <p>At the crossroads of innovation, passion, and knowledge, our team of college students united with a shared vision of crafting high-quality mobile applications that add tangible value to users&#39; lives. Leveraging our diverse skills in SQL database management, NodeJS backend development, and Flutter frontend design, we embarked on an exhilarating journey to develop cutting-edge apps that harness the power of AI to elevate user experiences and broaden their horizons.</p><br></br>
-                <p><strong>Our Journey Begins</strong></p>
-                <p>Our journey commenced as a collective of like-minded students driven by a shared ambition to leave a mark on the landscape of technology. Acknowledging the potential of AI and mobile applications to revolutionize industries and reshape user interactions, we set out to channel this potential into an app that not only prioritizes user-friendliness but also stimulates intellectual growth.</p><br></br>
-                <p><strong>The App&#39;s Concept</strong></p>
-                <p>After numerous brainstorming sessions, we settled on an idea that resonated with our objectives: Tubepay, an application designed for users to earn free rewards in their free time while enjoying their favorite videos. This concept not only caters to entertainment enthusiasts but also prioritizes user privacy and data security, as Tubepay is crafted by ASL Software.</p><br></br>
-                <p><strong>The Tech Stack</strong></p>
-                <p>Tubepay&#39;s foundation is built on a robust tech stack, amalgamating SQL database management, NodeJS, and Flutter. The SQL database provides a reliable way to store vast amounts of data, while NodeJS serves as the backbone of our backend, handling data processing and interactions. Flutter&#39;s cross-platform capabilities and beautiful UI components enable us to create an engaging and seamless user experience.</p><br></br>
-                <p><strong>Privacy and Technology at the Core</strong></p>
-                <p>ASL Software, the creator of Tubepay, prioritizes user privacy and data security. Ads are server-based on users&#39; interests, enhancing the ecosystem. The technology behind Tubepay incorporates modern industry standards, with Node.JS as the server-side language, MySQL for simplicity and lightweight databases, and advanced encryption standards for security.</p>
-                <p>Our applications are crafted to meet modern needs, optimizing server costs without compromising speed and security. ASL Software utilizes proprietary software, custom-built to maintain servers and build applications using segments and micro-service architecture.</p><br></br>
-                <p><strong>User-Driven Development</strong></p>
-                <p>Throughout the development process, user feedback has been pivotal. Surveys, beta testing, and user interviews have provided insights to enhance Tubepay continually. This iterative approach allows us to fine-tune the app to meet the specific demands of our users.</p><br></br>
-                <p><strong>Our Mission Ahead</strong></p>
-                <p>As we look to the future, our mission is to empower users with the knowledge and confidence to communicate effectively. We are committed to expanding Tubepay&#39;s features, refining its AI capabilities, and exploring new ways to make language learning an enjoyable and rewarding experience.</p><br></br>
-                <p><strong>Join Us on Our Adventure</strong></p>
-                <p>Tubepay represents not only our technical prowess but also our dedication to creating products that make a positive impact. We invite you to join us on this exciting adventure of learning and growth as we continue to push the boundaries of what technology and AI can achieve for education and personal development.</p>
-                <p>In conclusion, our team of college students came together to build Tubepay, an ad revenue-based application that combines the power of SQL, NodeJS, Flutter, and AI to enrich users&#39; lives by providing free rewards in their free time. We are enthusiastic about the possibilities that lie ahead and are committed to making a meaningful difference in the lives of our users. Thank you for joining us on this incredible journey!</p><br></br>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=appmoneydev@gmail.com&su=Inquiry&body=Tell us more about what you want...">
-                    <p className='text-md w-[140px] font-bold text-orange-500 border-2 border-orange-700 rounded-md hover:text-black ml-4 flex justify-center items-center h-[50px]'>CONTACT US</p>
-                </a>
+            {/* Navigation Bar */}
+            <nav className="w-full flex justify-between items-center py-4 max-w-6xl">
+                <div className="text-2xl font-bold"><Link href="/" className="hover:underline">TUBEPAY</Link></div>
+                <div className="flex gap-6">
+                    <Link href="/" className="hover:underline">Home</Link>
+                    <Link href="/about" className="hover:underline">About</Link>
+                    <Link href="/privacy" className="hover:underline">Legal</Link>
+                    <Link href="/faq" className="hover:underline">FAQs</Link>
+                </div>
+            </nav>
 
+            {/* Main Content */}
+            <div className="text-gray-300 p-6 md:p-12 max-w-5xl mx-auto">
+                <h1 className='text-4xl font-extrabold text-yellow-400 text-start mb-6'>About TubePay</h1>
+
+                <section className="space-y-6 text-sm md:text-base leading-relaxed">
+                    <p>At <b>TubePay</b>, we bring together innovation, passion, and technology to create a high-quality mobile experience that benefits our users. Our team, composed of dedicated developers and AI enthusiasts, is committed to delivering an app that allows users to earn rewards while watching videos.</p>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 Our Mission</h2>
+                    <p>Our goal is to provide a <b>secure and transparent</b> platform where users can <b>earn free rewards</b> in their spare time. With the integration of AI and smart technologies, we ensure that your experience is smooth, engaging, and rewarding.</p>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 The Technology Behind TubePay</h2>
+                    <p>TubePay is built on a <b>robust tech stack</b> combining <b>SQL database management, NodeJS, and Flutter</b>. This ensures a seamless and reliable user experience. Here’s how it works:</p>
+                    <ul className="list-disc pl-6 space-y-2">
+                        <li>💾 <b>SQL Databases</b> – Secure and scalable data storage.</li>
+                        <li>⚙️ <b>NodeJS Backend</b> – Fast and efficient data processing.</li>
+                        <li>📱 <b>Flutter Frontend</b> – Smooth and responsive UI.</li>
+                        <li>🔒 <b>Enhanced Security</b> – Advanced encryption for data protection.</li>
+                    </ul>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 Privacy & Security</h2>
+                    <p>We prioritize <b>user privacy</b> and <b>data security</b>. All advertisements and offers are carefully selected to enhance the ecosystem without compromising your data.</p>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 Monetization & Rewards</h2>
+                    <p>TubePay generates revenue through ads, allowing us to <b>provide free rewards</b> to our users. You can <b>earn rewards</b> by:</p>
+                    <ul className="list-disc pl-6 space-y-2">
+                        <li>🎥 Watching videos and engaging with content.</li>
+                        <li>🎰 Playing <b>Lucky Number & Spin Wheel</b>.</li>
+                        <li>📢 Inviting friends and earning referral bonuses.</li>
+                        <li>💳 Redeeming points via <b>PayPal, Amazon Gift Cards, and more!</b></li>
+                    </ul>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 Our Commitment to Users</h2>
+                    <p>Our development is driven by <b>user feedback</b>. We conduct surveys, beta testing, and direct interactions to improve TubePay continuously. Your suggestions help shape the future of the app.</p>
+
+                    <h2 className="text-xl font-bold text-yellow-400 mt-6">📌 Join Us</h2>
+                    <p>We invite you to be a part of our journey. <b>TubePay is more than just an app—it’s a community!</b> 🚀</p>
+                </section>
+
+                {/* Contact Button */}
+                <div className="mt-8 text-center">
+                    <a href="mailto:team.tubepay@gmail.com?subject=Inquiry&body=Tell us more about what you want..." className="text-sm font-bold text-orange-400 border-2 border-orange-500 rounded-md px-6 py-2 hover:bg-orange-500 hover:text-white transition">
+                        📩 Contact Us
+                    </a>
+                </div>
             </div>
         </main>
-    )
+    );
 }
 
 export default About;
