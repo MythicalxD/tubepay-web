@@ -65,7 +65,7 @@ const apps = [
     ios: null,
     screenshots: ["/apps/r1.webp", "/apps/r2.webp", "/apps/r3.webp"],
     stats: [
-      { label: "Downloads", value: "100k+" },
+      { label: "Downloads", value: "10k+" },
       { label: "Users Rewarded", value: "5k$+" },
       { label: "Happy Customers", value: "20k+" },
     ],
@@ -103,12 +103,12 @@ const testimonials = [
   },
   {
     name: "Priya",
-    text: "CashPlay gives me something new every day. Loved the fun tasks.",
+    text: "CashPlay surprises me with something fun daily — I really enjoy the variety of games!",
     stars: 5,
   },
   {
     name: "Vikram",
-    text: "RadioCash makes my day with great music + rewards combo!",
+    text: "RadarCash keeps me hooked — scanning with the radar is fun and the instant rewards make it even better!",
     stars: 4,
   },
 ];
@@ -184,17 +184,21 @@ export default function Home() {
         {/* Partners Section */}
         <div className="w-full mt-16 flex justify-center">
           <div className="flex flex-wrap justify-center items-center gap-12">
-            {["CPX Research", "Notik Offerwall", "KIWI-Walls", "Strucon Games", "AST Ltd."].map(
-              (partner, i) => (
-                <motion.span
-                  key={i}
-                  className="text-xl md:text-2xl font-semibold text-gray-400 hover:text-white transition duration-300 cursor-default"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  {partner}
-                </motion.span>
-              )
-            )}
+            {[
+              "CPX Research",
+              "Notik Offerwall",
+              "KIWI-Walls",
+              "Strucon Games",
+              "AST Ltd.",
+            ].map((partner, i) => (
+              <motion.span
+                key={i}
+                className="text-xl md:text-2xl font-semibold text-gray-400 hover:text-white transition duration-300 cursor-default"
+                whileHover={{ scale: 1.1 }}
+              >
+                {partner}
+              </motion.span>
+            ))}
           </div>
         </div>
 
@@ -231,7 +235,9 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-gray-200 mb-4 italic">&quot;{t.text}&quot;</p>
+                  <p className="text-gray-200 mb-4 italic">
+                    &quot;{t.text}&quot;
+                  </p>
                   <p className="font-semibold">{t.name}</p>
                 </div>
               </motion.div>
