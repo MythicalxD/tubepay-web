@@ -1,40 +1,43 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Metadata } from 'next';
-import Head from 'next/head';
-import { Analytics } from '@vercel/analytics/react';
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import BottomNav from "@/components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: 'Tubepay official',
-  description: 'Earn free rewards by watching videos on Tubepay. Download trusted application and start earning now',
-}
+export const metadata = {
+  title: "Tubepay official",
+  description:
+    "Earn free rewards by watching videos on Tubepay. Download trusted application and start earning now",
+  metadataBase: new URL("https://tubepay.live"),
+  alternates: {
+    canonical: "https://tubepay.live/",
+  },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
+        {/* Extra tags not covered by `metadata` */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Earn free rewards by watching videos on Tubepay. Download trusted application and start earning now."></meta>
-        <link rel="canonical" href="https://tubepay.live/"></link>
-        <title>Tubepay watch and Earn (Tubepay official)</title>
-      </Head>
-      <body className={`${inter.className} overflow-x-hidden`}>
+        {/* ReactBits Background */}
+        <link
+          rel="stylesheet"
+          href="https://reactbits.dev/backgrounds/liquid-ether.css"
+        />
+      </head>
+      <body
+        className={`${inter.className} overflow-x-hidden liquid-ether-bg`}
+      >
         {children}
         <Analytics />
-        {/* Footer */}
         <BottomNav />
       </body>
-
     </html>
-  )
+  );
 }
-
-
-
