@@ -311,6 +311,16 @@ function AppInfo({ app, align }: { app: any; align: "left" | "right" }) {
           </div>
         ))}
       </div>
+      <div
+        id="frame"
+        className="width: 100%;margin: auto;position: relative; z-index: 99998;"
+      >
+        <iframe
+          data-aa="2425888"
+          src="//acceptable.a-ads.com/2425888/?size=Adaptive"
+          className="border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto"
+        ></iframe>
+      </div>
     </div>
   );
 }
