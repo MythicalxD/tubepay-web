@@ -74,12 +74,12 @@ function Redirector() {
       </div>
 
       {/* 3. Manual Override */}
-      <button 
+      {/* <button 
         onClick={() => window.location.href = targetUrl}
         className="mt-8 text-gray-400 text-sm underline decoration-dotted"
       >
         Click here to skip if not redirected
-      </button>
+      </button> */}
     </div>
   );
 }
