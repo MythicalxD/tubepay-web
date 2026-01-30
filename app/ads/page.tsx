@@ -1,116 +1,93 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
 
-export default function AdsPage() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [refCode, setRefCode] = useState("");
+import { useEffect, useState, Suspense } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
+
+function Redirector() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
+  const targetUrl = searchParams.get('url');
+  const [timeLeft, setTimeLeft] = useState(5);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 10000); // 10 seconds
+    // If no URL is present, don't start the timer
+    if (!targetUrl) return;
 
-    return () => clearTimeout(timer);
-  }, []);
+    // Countdown logic
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          window.location.href = targetUrl; // Hard redirect to break out of frame
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
 
-  const submitRefCode = () => {
-    if (!refCode.trim()) {
-      alert("Please enter a referral code");
-      return;
-    }
-    alert("Referral Code submitted: " + refCode);
-    setShowPopup(false);
-  };
+    return () => clearInterval(timer);
+  }, [targetUrl]);
+
+  if (!targetUrl) {
+    return (
+      <div className="flex items-center justify-center h-screen text-gray-500">
+        Error: No destination URL provided.
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full flex flex-col items-center mt-6">
-      {/* ADS */}
-      <div
-        id="frame"
-        style={{
-          width: "100%",
-          margin: "auto",
-          position: "relative",
-          zIndex: 99998,
-        }}
-      >
-        <iframe
-          data-aa="2425888"
-          src="//acceptable.a-ads.com/2425888/?size=Adaptive"
-          style={{
-            border: 0,
-            padding: 0,
-            width: "70%",
-            height: "260px",
-            overflow: "hidden",
-            display: "block",
-            margin: "auto",
-          }}
-        ></iframe>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+      {/* 1. Status Message */}
+      <div className="text-center mb-8">
+        <h1 className="text-xl font-semibold text-gray-800 mb-2">
+          Redirecting you in...
+        </h1>
+        <div className="text-5xl font-bold text-blue-600 animate-pulse">
+          {timeLeft}s
+        </div>
+        <p className="text-sm text-gray-400 mt-4">
+          Please wait while we prepare your link.
+        </p>
       </div>
 
-      {/* WAIT TEXT */}
-      <p className="text-center text-lg mt-4 font-semibold">
-        Wait <span className="text-blue-500">10 seconds</span> to get free TP…
-      </p>
-
-      {/* POPUP OVERLAY */}
-      {showPopup && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(0, 0, 0, 0.6)",
-            backdropFilter: "blur(4px)",
-            zIndex: 999999,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div
+      {/* 2. Featured Ad Area */}
+      <div className="w-full max-w-md bg-white p-4 rounded-xl shadow-lg border border-gray-100">
+        <p className="text-[10px] text-gray-300 uppercase tracking-widest mb-2 text-center">
+          Advertisement
+        </p>
+        <div id="frame" className="flex justify-center">
+          <iframe 
+            data-aa='2425888' 
+            src='//acceptable.a-ads.com/2425888/?size=Adaptive'
             style={{
-              background: "white",
-              padding: "20px",
-              borderRadius: "10px",
-              width: "300px",
-              textAlign: "center",
+              border: 0, 
+              padding: 0, 
+              width: '100%', 
+              height: '250px', // Larger ad format for the bridge page
+              overflow: 'hidden', 
+              display: 'block'
             }}
-          >
-            <h3>Enter Your Referral Code</h3>
-            <input
-              value={refCode}
-              onChange={(e) => setRefCode(e.target.value)}
-              placeholder="Referral Code"
-              style={{
-                width: "90%",
-                padding: "8px",
-                marginTop: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-              }}
-            />
-
-            <button
-              onClick={submitRefCode}
-              style={{
-                marginTop: "12px",
-                width: "100%",
-                padding: "10px",
-                background: "#007bff",
-                color: "white",
-                border: "none",
-                borderRadius: "6px",
-              }}
-            >
-              Submit
-            </button>
-          </div>
+          />
         </div>
-      )}
+      </div>
+
+      {/* 3. Manual Override */}
+      <button 
+        onClick={() => window.location.href = targetUrl}
+        className="mt-8 text-gray-400 text-sm underline decoration-dotted"
+      >
+        Click here to skip if not redirected
+      </button>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
+      <Redirector />
+    </Suspense>
   );
 }
