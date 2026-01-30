@@ -42,7 +42,7 @@ function Redirector() {
       {/* 1. Status Message */}
       <div className="text-center mb-8">
         <h1 className="text-xl font-semibold text-gray-800 mb-2">
-          Redirecting you in...
+          Loading your game in...
         </h1>
         <div className="text-5xl font-bold text-blue-600 animate-pulse">
           {timeLeft}s
